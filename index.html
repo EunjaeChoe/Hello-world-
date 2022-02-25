@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>나의 아카이브</title>
+    <style>
+        html, body, h1, h2{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url(./imgs/worksbg.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .wrap{
+            width: 1200px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .tit{
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>나의 아카이브</h1>
-    <h2>
-        <a href="./01.Info_PJ/index.html" target="_blank">네이버요약뉴스</a>
-    </h2>
+    <div class="wrap">
+        <h1 class="tit">
+            <img src="./imgs/mylogo_14.png" alt="">
+        </h1>
+        <div class="pbx">
+            <section>
+                <h2>개인프로젝트</h2>
+                <ul>
+                    <li>
+                        <a href="./01.Info_PJ/info.html" target="_blank">기본전달사항</a>
+                    </li>
+                    <li>
+                        <a href="./01.Info_PJ/index.html" target="_blank">네이버요약뉴스</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
 </body>
 </html>
