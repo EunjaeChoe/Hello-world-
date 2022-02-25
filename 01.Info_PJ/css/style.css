@@ -46,6 +46,7 @@ header{
 
 nav.gnb img{
     vertical-align: middle;
+    border: none;
 }
 
 footer#info address{
