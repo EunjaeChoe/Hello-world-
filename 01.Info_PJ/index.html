@@ -3,19 +3,22 @@
     <head>
         <title>주제 무리뉴스</title>
         <meta charset="UTF-8">
-        <style>
+        <style>            
             header{
                 width: 727px;
                 /* height: 200px; */
-                border: 1px solid silver;
+                border: 1px solid none;
                 padding: 10px;
                 margin: 20px auto;
-
-                text-align: center;
                 background-color:  #e0e7eb;
-                box-sizing: border-box;
+                text-align: center;
+            }   
+            .bxc{
+                width: 727px;
+                margin: 0 auto;
+                padding: 10px;
+                text-align: center;
             }
-
             #top h1{
                 color: #5b5c76;
                 text-shadow: 2px 2px 9px #534630;
@@ -25,10 +28,24 @@
                 text-decoration: none;
                 font-weight: bold;
             }
-
-            nav.gnb img{
-                
+            .gnb>a:hover{
+                text-decoration: overline;
             }
+            nav.gnb img{
+                vertical-align: middle;
+            }
+            footer#info address{
+                padding: 20px;
+                background-color: #eddfe1;
+                font-style: normal;
+                color: #444;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            #info span{
+                font-style: italic;
+            }
+            
         </style>
     </head>
     <body>
@@ -46,13 +63,13 @@
                 
             </nav>
         </header>
-        <main id="cont">
+        <main id="cont" class="bxc">
             <img src="./images/pluta_news.jpg" alt="뉴스메인이미지" title="무야호" style="width: 600px;">
         </main>
-        <footer id="info">
+        <footer id="info" class="bxc">
             <address>
                 서울시 강남구 역삼동 119 대호B 8F <br>
-                대표 : Jose Mourinho <br>
+                대표 : <span>Jose Mourinho</span> <br>
                 전화 : 010-2222-3333
             </address>
         </footer>
