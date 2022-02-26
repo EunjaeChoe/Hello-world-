@@ -5,3 +5,29 @@
 #cont{
     text-align: left;
 }
+.atit{
+    font-size: 30px;
+    font-weight: normal;
+    font-family: "굴림", "궁서", "맑은 고딕", serif;
+    letter-spacing: -2px;
+    word-spacing: 3;
+    white-space: nowrap;
+}
+
+.afig{
+    margin: 15px 0 ;
+}
+
+.afig img{
+    width: 100%;
+}
+
+.afig figcaption{
+    text-align: center;
+}
+
+.afig small{
+    font-size: 12px;
+    font-family: "굴림";
+    color: #666;
+}
