@@ -82,5 +82,8 @@
     background-color: lightyellow;
     padding: 15px;
     background-clip: content-box;
+}
 
+.twork img{
+    padding: 15px;
 }
