@@ -24,10 +24,43 @@
 
 .afig figcaption{
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .afig small{
     font-size: 12px;
     font-family: "굴림";
     color: #666;
+}
+
+.arti{
+    font-family: "굴림", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+#cont h3{
+    font-family: "굴림";
+    font-size: 14px;
+}
+
+.quote{
+    background-color: #ececec;
+    padding: 10px;
+    text-align: center;
+}
+
+.quote h3{
+    text-align: center;
+}
+
+.quote blockquote{
+    font-size: 12px;
+    text-indent: 15px;
+    text-align: justify;
+}
+
+#cont article{
+    border-top: 1px solid #ccc;
+    margin-top: 25px;
 }
