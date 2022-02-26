@@ -48,6 +48,7 @@
     background-color: #ececec;
     padding: 10px;
     text-align: center;
+    background-clip: content-box;
 }
 
 .quote h3{
@@ -63,4 +64,23 @@
 #cont article{
     border-top: 1px solid #ccc;
     margin-top: 25px;
+}
+
+#cont a{
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "굴림";
+}
+
+#cont a:hover{
+    text-decoration: underline;
+}
+
+.twork{
+    text-align: center;
+    background-color: lightyellow;
+    padding: 15px;
+    background-clip: content-box;
+
 }
