@@ -1,47 +1,226 @@
 @charset "utf-8";
+/* 도깨비 메인페이지 CSS - main.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&display=swap');
+
+/* 
+font-family: 'Black And White Picture', sans-serif;
+font-family: 'Kirang Haerang', cursive;
+*/
+
+/* 기본태그 초기화 - 마진,패딩 없애기 */
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd{
     margin: 0;
     padding: 0;
 }
-
+/* 헤딩태그 글자크기 초기화 */
 h1,h2,h3,h4,h5,h6{
     font-size: 100%;
+    /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
+    기본글자크기는 16px */
 }
 
-body *{
+
+/* 작업진행중 외곽선 */
+/* 별표시(*)는 모든요소를 선택시 사용 */
+body * {
     outline: 1px dashed gray;
+    /* outline은 보더와 달리
+    주변요소에 전혀 영향을 주지 않는다!
+    그래서 border는 박스요소에 필수포함요소지만
+    outline은 필수요소가 아니다!!!
+    그리고 요소의 외곽선 바깥으로 보임!
+    사용법은 border와 유사함
+    outline: 두께 종류 색상; */
 }
 
+/* 컨텐츠 파트 최상위부모 */
 body{
-    background:
+    /* 한번에 배경주기!!! */
+    /* background: 색상 이미지 반복여부 고정 위치/크기 */
+    /* background: 색이반고윙/크 */
+
+    background: 
     url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
     url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+    /* 로고가 위에 와야해서 먼저 배경셋팅함! */
     
+
+    /* 따로주기 */
+    /* background-image: url(../images/bg_mainvisual.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; */
+
+
+
+    /* 1. 배경색 */
+    /* background-color: lightpink; */
+
+    /* 2. 배경이미지 - 기본적으로 반복됨(x,y방향) */
+    /* background-image: url(../images/bg_logo_a_01.png); */
+    /* 외부css인 경우 css파일위치에서 한단계위로 올라간 후
+    이미지폴더를 찾는다!(경로에 주의!) ../ 는 한칸위로 */
+
+    /* 3. 배경반복여부 */
+    /* background-repeat: no-repeat; */
+    /* 
+        no-repeat 반복안함
+        repeat-x x축반복
+        repeat-y y축반복
+    */
+    /* 4. 배경이미지 고정하기 */
+    /* background-attachment: fixed; */
+    /* fixed는 보이는 화면에 고정함! */
+
+    /* 5. 배경이미지 위치변경 */
+    /* background-position: center; */
+    /* background-position: right bottom; */
+    /* background-position: 100px 200px; */
+    /* 
+        background-position: 가로 세로; 
+        - 가로: px, % 등 단위 또는 left, center, right
+        - 세로: px, % 등 단위 또는 top, center, bottom
+    
+    */
+    /* 6.배경이미지 크기 */
+    /* background-size: cover; */
+    /* background-size: contain; */
+    /* background-size: auto 200px; */
+    /* background-size: 100px auto; */
+    /* background-size: 100px 400px; */
+    /* 
+        background-size: 가로 세로; 
+        - 가로 : px,% 등 단위 auto
+        - 세로 : px,% 등 단위 auto
+        -> 가로,세로중 한쪽만 크기주고 나머지는 auto일
+        경우 이미지가 고유 비율을 유지한다!
+        ->>> 특별한 값 : 
+        contain(비율유지 채우기-이미지모두 보임,빈틈있음)
+        cover(비율유지 채우기-배경박스에 빈틈없이 채움)
+    */
+
 }
 
-
+/********** 공통 클래스 **********/
+/* 속박스 클래스 */
 .ibx{
+    /* width: 1200px; */
     max-width: 1200px;
-    margin: 0 auto;
+    /* 최대가로 크기 1200px이다가 화면이 
+    1200px 보다 작아지면 auto로 자동변경 
+    가로스크롤이 생기지 않는다! */
+    margin: 0 auto;/* 위아래 양쪽(auto는 등분함) */
+    /* 마영오! 블록박스 가로중앙 */
 }
 
+/********** 1. 상단영역 **********/
 .top{
     height: 125px;
 }
-
-.cont{ 
+/********** 2. 메인영역 **********/
+.cont{
     max-width: 1920px;
+    /* 가장 큰 일반 해상도 크기로 최대가로크기 변경! */
     height: 800px;
     overflow: hidden;
+    /* 자식요소 마진탑포함! */
 }
+/* 캐릭터 부모박스 */
 #cbx{
     width: 90%;
+    /* 부모박스크기의 90%가로크기 */
     margin: 0 auto;
+    /* 마영오! - 블록가로중앙 */
     margin-top: 400px;
-    height: 300px;
-    background-color:rgba(144, 238, 144, 0.637);
+    /* 윗쪽마진 400px로 설정 */
+    /* height: 300px; */
+    background-color: rgba(144, 238, 144, 0.637);
+    overflow: hidden;
+    /* float해제를 위해! */
+
 }
 
+/* 캐릭터박스 공통 */
+.cat{
+    /* 4등분 가로 크기는 몇%? 25% */
+    width: 24%;
+    /* 25% - 1%(양쪽마진) = 24% */
+    margin: 0 .5%;
+    /* margin: 0 0.5%; */
+    /* 양쪽마진은 0.5%씩 2개이므로 합이 1%임
+    이를 크기에 반영한다! 
+    참고) 0.몇 이런수치값은 보통 0을 생략하는 경우가 많다*/
+    float: left;
+    /* 
+        [ 블록요소를 옆으로 흘러가게 하기!!! ]
+        float속성
+        -> left 값은 나는 왼쪽에 너는 오른쪽에 올라와!
+        -> right 값은 나는 오른쪽에 너는 왼쪽에 올라와!
+        [ 자식요소가 float된 경우 부모요소는 높이값 0? ]
+        -> 블록 자식요소 float으로 인해 부모요소가 높이값
+        이 0인 경우 다음과 같이해결한다!
+        1. 부모요소에 overflow:hidden 설정
+        2. float자식요소 중 float이 아닌 마지막 요소에
+         float해제 속성인 clear설정하기!
+    */
+
+    /* height: 200px; */
+    /* outline: 4px dotted red; */
+    cursor: pointer;
+    /* 손가락모양 */
+}
+
+/* 캐릭터 이미지 */
+.ci>img{
+    width: 100%;
+    /* 이미지크기를 싸고 있는 부모박스에 맞춰라!
+    height크기를 안주면 비율유지함! */
+    
+}
+/* 캐릭터 이름이미지 박스 */
+.ci span{
+    display: block;
+    /* 블록으로 변경해서 부모박스 끝까지 차지함! */
+    text-align: center;
+    /* 인라인요소 중앙정렬 */
+    margin-top: -21%;
+    /* 부모높이값 기준 21%크기만큼 
+    반대방향(위쪽)으로 위치 이동함 */
+}
+/* 캐릭터 이름이미지 */
+.ci span img{
+    width: 40%;
+    /* 부모박스(span)의 가로크기의 40%크기 */
+}
+/* 
+    [ 자식요소 선택 가상클래스 ]
+    - 전제조건: 자식요소가 같은 종류일 경우
+    :first-child 첫번째 자식
+    :last-child 마지막 자식
+    :nth-child(순번) 몇번째 자식
+    - 순번은 1부터~!
+    - 전제조건: 자식요소가 여러가지일 경우
+    :first-of-type 첫번째 자식
+    :last-of-type 마지막 자식
+    :nth-of-type(순번) 몇번째 자식
+    - 순번은 1부터~!
+*/
+/* 첫번째 이름이미지 숨기기 */
+.ci span img:first-child{
+    display: none;
+}
+/* .cat에 마우스 오버시 첫번째 이미지 보이기 */
+.cat:hover .ci span img:first-child{
+    display: inline;
+}
+/* .cat에 마우스 오버시 마지막 이미지 숨기기 */
+.cat:hover .ci span img:last-child{
+    display: none;
+}
+
+/********** 3. 하단영역 **********/
 .info{
     height: 241px;
 }
