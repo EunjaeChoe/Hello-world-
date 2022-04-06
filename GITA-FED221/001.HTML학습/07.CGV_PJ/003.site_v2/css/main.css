@@ -33,13 +33,13 @@ body{
 /* 1-1. 페이지 타이틀 */
 h1.tit{
     font-family: 'Jua', sans-serif;
-    color: aquamarine;
+    color: yellowgreen;
     font-size: 40px;
     text-align: center;
     line-height: 80px;
 
     /* 그림자를 이용한 Glow효과 */
-    text-shadow: 0 0 4px aquamarine;
+    text-shadow: 0 0 4px yellowgreen;
 
     /* 애니메이션: 이시이지반방마 */
     animation: titAni .5s ease-in infinite alternate;
@@ -48,7 +48,7 @@ h1.tit{
 /* 타이틀 글루우 효과 애니메이션 키프레임 */
 @keyframes titAni {
     to{
-        text-shadow: 0 0 12px aquamarine;
+        text-shadow: 0 0 12px yellowgreen;
     }
 } /* 키프레임 */
 
@@ -170,34 +170,7 @@ h1.tit{
     /* 인라인요소 오른쪽 끝으로 보냄! */
 }
 
-/* 영사기 박스 */
-#cam{
-    position: absolute;
-    bottom: -14px;
-    right: -51px;
-    /* 부모는? .gnb */
-}
-/* 영사기이미지 */
-#cam img{
-    position: relative;
-    z-index: 1;
-    /* 영사기 이미지가 빔박스보다 위! */
-    width: 50px;
 
-    /* 영사기 회전 */
-    transform: rotate(25deg);
-    /* 양수값은 시계방향 */
-
-    /* 트랜지션: 속시이지 */
-    transition: .5s ease-out .3s;
-    /* 돌아올땐 0.3초 기다려! */
-}
-/* GNB에 마우스 오버시 영사기 회전하기 */
-.gnb:hover #cam img{
-    transform: rotate(0deg);
-    transition-delay: 0s;
-    /* 오버시엔 기다리지마! */
-}
 
 /* 빔박스 */
 .beam{
@@ -225,15 +198,6 @@ h1.tit{
     animation: beamAni .04s linear infinite alternate;
 }
 
-/* 빔이 너울너울 거리도록 애니메이션 키프레임 */
-@keyframes beamAni {
-    from{
-        opacity: 0.9;
-    }
-    to{
-        opacity: 0.5;
-    }
-} /*  beamAni 키프레임 */
 
 
 /******************* 2. 메인영역 *******************/
@@ -326,80 +290,8 @@ h1.tit{
 
 /* 첫번째 li 영화제목 */
 .movtxt li:first-child{
-    color: aqua;
+    color: yellowgreen;
     font-size: 17px;
     letter-spacing: -1px;
     margin-top: 30%;
-}
-
-
-/******************* 3. 하단영역 *******************/
-#info{
-    position: relative;
-    /* 부모자격 - .sns */
-    height: 100px;
-}
-/* 3-1.회사정보 */
-#info address{
-    color: #c3c3c3;
-    font-style: normal;
-    font-family: 'Cute Font', cursive;
-    font-size: 18px;
-    line-height: 20px;
-
-    /* 안쪽여백 */
-    padding-top: 20px;
-    padding-left: 20px;
-}
-/* 하단로고 이미지 */
-#info img{
-    float: left;
-    /* 이미지 자신은 왼쪽, 글자는 오른쪽에 흐르게함 */
-    margin-right: 20px;
-}
-
-/* 3-2. sns박스 */
-ul.sns{
-    position: absolute;
-    top: 35px;
-    right: 20px;
-    /* 부모는? #info */
-
-    display: flex;
-    /* 플렉스박스 */
-
-}
-.sns li{
-    width: 34px;
-    height: 34px;
-    background: url(../images/sprites_logo.png) no-repeat;
-    /* outline: 1px solid lime; */
-    margin: 0 2px;
-    
-    filter: grayscale(100%);
-    /* 필터: 흑백처리 */
-}
-/* 오버시 칼라 */
-.sns li:hover{
-    filter: grayscale(0%);
-}
-
-/* 배경위치 */
-/* 페이스북 */
-.sns li:first-child{
-    background-position: -510px -429px;
-}
-/* 트위터 */
-.sns li:nth-child(2){
-    background-position: -552px -429px;
-}
-/* 인스타그램 */
-.sns li:last-child{
-    background-position: -594px -429px;
-}
-/* sns a링크 확장 */
-.sns a{
-    display: block;
-    width: 100%;
-    height: 100%;
 }
